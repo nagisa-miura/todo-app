@@ -1,9 +1,10 @@
-<h1>タスク編集</h1>
-<%= form_for(@task) do |f| %>
-  <div><%= f.label :title %></div>
-  <div><%= f.text_field :title %></div>
-  <div><%= f.text_field :pic %></div>
-  <div><%= f.text_area :detail %></div>
-  <div><%= f.submit %></div>
-<% end %>
-<%= link_to '戻る', tasks_path %>
+<h1 class="text-center mt-3">タスク編集</h1>
+<div class="form-group">
+  <%= form_for(@task) do |f| %>
+    <%= f.text_field :title, class: "form-control" %>
+    <%= f.text_field :pic, class: "form-control mt-3 "%>
+    <%= f.text_area :detail, class:"form-control mt-3", rows: 5 %>
+    <%= f.submit class:"btn btn-primary mt-3"%>
+  <% end %>
+  <%= link_to "戻る", tasks_path, class: "btn btn-primary mt-3"%>
+</div>

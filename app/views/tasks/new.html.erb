@@ -1,9 +1,8 @@
-<h1>新規タスク</h1>
+<h1 class="text-center mt-3">新規タスク</h1>
 <%= form_for(@task) do |f| %>
-  <div><%= f.label :title %></div>
-  <div><%= f.text_field :title %></div>
-  <div><%= f.label :detail %></div>
-  <div><%= f.text_area :detail %></div>
-  <div><%= f.submit %></div>
+  <%= f.text_field :title, class: "form-control mt-3", placeholder: "タイトル" %>
+  <%= f.text_field :detail, class: "form-control mt-3", placeholder: "担当" %>
+  <%= f.text_area :detail, class: "form-control mt-3", placeholder: "ここにテキストを入力してください" %>
+  <%= f.submit class: "btn btn-primary mt-3" %>
 <% end %>
-<%= link_to '戻る', tasks_path %>
+<%= link_to '戻る', tasks_path, class: "btn btn-primary mt-3" %>

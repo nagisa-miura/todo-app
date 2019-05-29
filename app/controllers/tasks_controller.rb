@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  before_action :ensure_correct_user,
+  only: [:edit, :update, :destroy]
   def index
     @tasks = Task.order('created_at DESC').page(params[:page]).per(5)
   end
