@@ -1,22 +1,22 @@
-<h1>タスク一覧</h1>
-<table>
-  <thead>
-    <tr>
-      <th>タスク名</th>
-    </tr>
-  </thead>
-  <tbody>
+<%= render 'layouts/header' %>
+<div class= "wrapper">
+  <h1 class="text-center mt-3 mb-3">タスク一覧</h1>
+  <div class="card-wrapper">
     <% @tasks.each do |task| %>
-      <tr>
-        <td><%= task.title %></td>
-        <td>詳細:<%= task.detail %></td>
-        <td>担当者:<%= task.pic %></td>
-        <td><%= link_to("編集",edit_task_path(task)) %></td>
-        <td><%= link_to "削除",task_path(task), method: :delete %></td>
-      </tr>
+      <div class="card bg-light w-50 mx-auto mb-3">
+        <div class="card-body">
+          <h4 class="card-title">タイトル:<%= task.title %></h4>
+          <h6 class="card-subtitle mb-2 text-muted">担当者:<%= task.pic %></h6>
+          <p class="card-text">詳細:<%= task.detail %></p>
+          <% if user_signed_in? && current_user.id == task.user_id %>
+          <%= link_to "編集",edit_task_path(task) %>
+          <%= link_to "削除",task_path(task), method: :delete %>
+          <% end %>
+        </div>
+      </div> 
     <% end %>
-  </tbody>
-</table>
-<%= link_to('追加', new_task_path) %>
-
-<%= paginate(@tasks) %>
+  </div>
+  <div class = "container pagination justify-content-center">
+    <%= paginate(@tasks) %>
+  </div>
+</div>
