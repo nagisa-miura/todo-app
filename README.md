@@ -1,24 +1,23 @@
-# README
+■実装した機能
+  投稿
+  編集削除(投稿者以外は非表示）
+  Deviseを用いたユーザ登録
+  ログイン,サインイン
+  ユーザ認証
+  許可されていないユーザのリダイレクト機能
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+■工夫した点
+  bootstrapの導入
+  レスポンシブデザイン
+  ドロップダウンメニュー
 
-Things you may want to cover:
+■苦労したところ
+  bootstrapの適切なクラス名の検索
+  ページネーションへのbootstrap適用
+  link_toやform_forなどヘルパーメソッドへのクラス適用
+  他の要素と組み合わさったときの使い方
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+■今後の課題
+  グループ機能をつけてタスク管理(担当の欄は今後実装)
+  DBに改行データを反映して保存（現状改行が反映されてない...)
+  ドラッグして並び替えなど編集機能の充実
